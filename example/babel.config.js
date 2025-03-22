@@ -4,7 +4,7 @@ module.exports = function (api) {
     presets: ["babel-preset-expo"],
     plugins: [
       [
-        "expo-env/babel-plugin",
+        "expo-typed-env/babel-plugin",
         {
           envSchemaPath: "./src/env.ts",
           tsconfigPath: "./tsconfig.json",

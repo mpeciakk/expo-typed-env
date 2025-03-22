@@ -1,5 +1,5 @@
 {
-  "name": "expo-env",
+  "name": "expo-typed-env-example",
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "expo": "~52.0.40",
-    "expo-env": "1.0.0",
+    "expo-typed-env": "1.1.1",
     "expo-status-bar": "~2.0.1",
     "react": "18.3.1",
     "react-native": "0.76.7"
@@ -24,7 +24,7 @@
   "description": "Type-safe env variables in expo using zod",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mpeciakk/expo-env.git"
+    "url": "git+https://github.com/mpeciakk/expo-typed-env.git"
   },
   "keywords": [
     "expo",
@@ -35,7 +35,7 @@
   "author": "mpeciak",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mpeciakk/expo-env/issues"
+    "url": "https://github.com/mpeciakk/expo-typed-env/issues"
   },
-  "homepage": "https://github.com/mpeciakk/expo-env#readme"
+  "homepage": "https://github.com/mpeciakk/expo-typed-env#readme"
 }

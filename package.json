@@ -1,10 +1,10 @@
 {
-  "name": "expo-env",
+  "name": "expo-typed-env",
   "description": "Type-safe environment variables for Expo applications using Zod schemas.",
   "version": "1.1.1",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mpeciakk/expo-env.git"
+    "url": "git+https://github.com/mpeciakk/expo-typed-env.git"
   },
   "keywords": [
     "expo",
@@ -15,9 +15,9 @@
   "author": "mpeciak",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mpeciakk/expo-env/issues"
+    "url": "https://github.com/mpeciakk/expo-typed-env/issues"
   },
-  "homepage": "https://github.com/mpeciakk/expo-env#readme",
+  "homepage": "https://github.com/mpeciakk/expo-typed-env#readme",
   "scripts": {
     "build": "tsup",
     "format": "prettier --check .",

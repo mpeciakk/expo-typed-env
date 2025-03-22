@@ -1,4 +1,4 @@
-import { createEnv } from "expo-env";
+import { createEnv } from "expo-typed-env";
 import { z } from "zod";
 
 const env = createEnv(

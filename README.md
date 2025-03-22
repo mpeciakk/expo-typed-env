@@ -1,4 +1,4 @@
-# expo-env
+# expo-typed-env
 
 Type-safe environment variables for Expo applications using Zod schemas.
 
@@ -15,11 +15,11 @@ Type-safe environment variables for Expo applications using Zod schemas.
 ## Installation
 
 ```bash
-npm install expo-env
+npm install expo-typed-env
 # or
-yarn add expo-env
+yarn add expo-typed-env
 # or
-pnpm add expo-env
+pnpm add expo-typed-env
 ```
 
 ## Usage
@@ -27,7 +27,7 @@ pnpm add expo-env
 1. Create an `env.ts` file in your project:
 
 ```typescript
-import { createEnv } from "expo-env";
+import { createEnv } from "expo-typed-env";
 import { z } from "zod";
 
 export const env = createEnv(
@@ -46,7 +46,7 @@ module.exports = function (api) {
   return {
     plugins: [
       [
-        "expo-env/babel-plugin",
+        "expo-typed-env/babel-plugin",
         {
           // Optional: Custom path to your env schema file, defaults to "./env.ts"
           envSchemaPath: "./src/env.ts",
@@ -107,7 +107,7 @@ repository. It demonstrates:
 
 ## How It Works
 
-expo-env uses a combination of build-time validation and Zod schemas to ensure
+expo-typed-env uses a combination of build-time validation and Zod schemas to ensure
 your environment variables are both present and correctly typed. The Babel
 plugin automatically processes your environment variables during the build
 process, providing type safety and validation.
