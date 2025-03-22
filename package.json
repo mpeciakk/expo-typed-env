@@ -1,0 +1,83 @@
+{
+  "name": "expo-env",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsup",
+    "format": "prettier --check .",
+    "lint": "eslint .",
+    "prepublish": "npm run build",
+    "release": "standard-version && git push --follow-tags && npm publish",
+    "typecheck": "tsc --noEmit"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "require": "./dist/index.js"
+      }
+    },
+    "./babel-plugin": {
+      "import": {
+        "types": "./dist/babel-plugin-expo-env.d.ts",
+        "import": "./dist/babel-plugin-expo-env.mjs"
+      },
+      "require": {
+        "types": "./dist/babel-plugin-expo-env.d.cts",
+        "require": "./dist/babel-plugin-expo-env.js"
+      }
+    }
+  },
+  "devDependencies": {
+    "@babel/types": "^7.26.10",
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
+    "@types/babel__core": "^7.20.5",
+    "@types/babel__traverse": "^7.20.6",
+    "@types/node": "^22.13.11",
+    "@typescript-eslint/parser": "^8.27.0",
+    "eslint": "^9.23.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "prettier": "3.5.3",
+    "prettier-eslint": "^16.3.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.3.3",
+    "typescript-eslint": "^8.27.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/traverse": "^7.26.10",
+    "@expo/env": "^0.4.2",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "zod": "^3.24.2"
+  },
+  "private": true,
+  "description": "Type-safe env variables in expo using zod",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpeciakk/expo-env.git"
+  },
+  "keywords": [
+    "expo",
+    "env",
+    "zod",
+    "type-safe"
+  ],
+  "author": "mpeciak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mpeciakk/expo-env/issues"
+  },
+  "homepage": "https://github.com/mpeciakk/expo-env#readme"
+}
