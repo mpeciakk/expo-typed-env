@@ -1,6 +1,23 @@
 {
   "name": "expo-env",
+  "description": "Type-safe environment variables for Expo applications using Zod schemas.",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpeciakk/expo-env.git"
+  },
+  "keywords": [
+    "expo",
+    "env",
+    "zod",
+    "type-safe"
+  ],
+  "author": "mpeciak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mpeciakk/expo-env/issues"
+  },
+  "homepage": "https://github.com/mpeciakk/expo-env#readme",
   "scripts": {
     "build": "tsup",
     "format": "prettier --check .",
@@ -50,6 +67,7 @@
     "eslint-plugin-prettier": "^5.2.3",
     "prettier": "3.5.3",
     "prettier-eslint": "^16.3.0",
+    "standard-version": "^9.5.0",
     "tsup": "^8.4.0",
     "typescript": "^5.3.3",
     "typescript-eslint": "^8.27.0"
@@ -61,23 +79,5 @@
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "zod": "^3.24.2"
-  },
-  "private": true,
-  "description": "Type-safe env variables in expo using zod",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mpeciakk/expo-env.git"
-  },
-  "keywords": [
-    "expo",
-    "env",
-    "zod",
-    "type-safe"
-  ],
-  "author": "mpeciak",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mpeciakk/expo-env/issues"
-  },
-  "homepage": "https://github.com/mpeciakk/expo-env#readme"
+  }
 }
