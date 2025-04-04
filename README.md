@@ -30,7 +30,7 @@ pnpm add expo-typed-env
 import { createEnv } from "expo-typed-env";
 import { z } from "zod";
 
-export const env = createEnv(
+export default createEnv(
   z.object({
     EXPO_PUBLIC_API_URL: z.string().url(),
     EXPO_PUBLIC_API_KEY: z.string().min(1),
