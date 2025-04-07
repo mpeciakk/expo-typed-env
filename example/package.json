@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "expo": "~52.0.40",
-    "expo-typed-env": "1.1.1",
     "expo-status-bar": "~2.0.1",
+    "expo-typed-env": "file:..",
     "react": "18.3.1",
     "react-native": "0.76.7"
   },

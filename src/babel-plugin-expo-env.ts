@@ -46,11 +46,15 @@ function parseEnv(schemaModulePath: string) {
       )}`,
     );
   }
+
+  return validatedEnv.data;
 }
 
 export default function plugin() {
+  let parsedEnv: any;
+
   return {
-    name: "inline-env-with-proper-env",
+    name: "inline-env-with-proper-value",
     visitor: {
       ImportDeclaration(
         path: NodePath<t.ImportDeclaration>,
@@ -79,7 +83,7 @@ export default function plugin() {
           );
 
           if (defaultSpecifier) {
-            parseEnv(schemaModulePath);
+            parsedEnv = parseEnv(schemaModulePath);
 
             state.myEnvNames = state.myEnvNames || [];
             state.myEnvNames.push(defaultSpecifier.local.name);
@@ -92,9 +96,9 @@ export default function plugin() {
         const node = path.node;
         const envs = state.myEnvNames || [];
 
-        if (t.isIdentifier(node.object) && envs.includes(node.object.name)) {
+        if (t.isIdentifier(node.object) && t.isIdentifier(node.property) && envs.includes(node.object.name)) {
           path.replaceWith(
-            t.memberExpression(t.identifier("process.env"), node.property),
+            t.valueToNode(parsedEnv[node.property.name]),
           );
         }
       },
@@ -102,7 +106,7 @@ export default function plugin() {
         const envs = state.myEnvNames || [];
 
         if (envs.includes(path.node.name)) {
-          path.replaceWith(t.identifier("process.env"));
+          path.replaceWith(t.valueToNode(parsedEnv[path.node.name]));
         }
       },
     } as Visitor<PluginState>,
