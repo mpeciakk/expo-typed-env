@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/mpeciakk/expo-typed-env/compare/v1.1.4...v1.2.0) (2025-04-07)
+
+
+### Features
+
+* inline virtual env with proper values ([d933f91](https://github.com/mpeciakk/expo-typed-env/commit/d933f91d7f8ba62876058bc0258f6ac712d70a24))
+
 ### [1.1.4](https://github.com/mpeciakk/expo-typed-env/compare/v1.1.3...v1.1.4) (2025-04-07)
 
 ### [1.1.3](https://github.com/mpeciakk/expo-typed-env/compare/v1.1.2...v1.1.3) (2025-04-07)
