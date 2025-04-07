@@ -5,6 +5,7 @@ import * as t from "@babel/types";
 import type * as BabelTypesNamespace from "@babel/types";
 import { load } from "@expo/env";
 import type * as z from "zod";
+import { register } from "ts-node";
 
 import { getMatchPath, normalizeModulePath } from "./util";
 
@@ -12,7 +13,7 @@ export type Babel = typeof BabelCoreNamespace;
 export type BabelTypes = typeof BabelTypesNamespace;
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-require("ts-node").register();
+register();
 
 type PluginOptions = {
   envSchemaPath?: string;
@@ -61,9 +62,9 @@ export default function plugin() {
         const tsconfigPath = state.opts.tsconfigPath || "./tsconfig.json";
 
         const importSource = path.node.source.value;
-        const schemaModulePath = normalizeModulePath(
-          resolve(process.cwd(), envSchemaPath),
-        );
+        const schemaModulePath = resolve(process.cwd(), envSchemaPath);
+        const normalizedSchemaModulePath = normalizeModulePath(schemaModulePath);
+
         const matchPath = getMatchPath(tsconfigPath);
         const resolvedImportPath = importSource.startsWith("@/")
           ? matchPath(importSource)
@@ -72,7 +73,7 @@ export default function plugin() {
         if (!resolvedImportPath) return;
         const normalizedImportedPath = normalizeModulePath(resolvedImportPath);
 
-        if (normalizedImportedPath === schemaModulePath) {
+        if (normalizedImportedPath === normalizedSchemaModulePath) {
           const defaultSpecifier = path.node.specifiers.find((spec) =>
             t.isImportDefaultSpecifier(spec),
           );
