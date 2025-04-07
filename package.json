@@ -1,7 +1,7 @@
 {
   "name": "expo-typed-env",
   "description": "Type-safe environment variables for Expo applications using Zod schemas.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mpeciakk/expo-typed-env.git"
